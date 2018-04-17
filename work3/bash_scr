@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if[! -d "work3"]; then 
+echp "work2 doesnot exist, making it"
+vlib work3 sh comp_lib
+fi
+
+if[ -s "alu.sv"]; 
+then 
+echp "work2 doesnot exist, making it"
+vlog -novopt alu.sv
+fi
+
+
+if[ -s "syn_alu"]; 
+then 
+design_vision -xg -f syn_alu
+fi

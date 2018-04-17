@@ -1,0 +1,99 @@
+ 
+
+
+
+
+
+
+  ---------------------
+1
+report_timing
+Information: Updating design information... (UID-85)
+
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : alu
+Version: L-2016.03-SP2
+Date   : Mon May 15 11:13:33 2017
+****************************************
+
+Operating Conditions: TYPICAL   Library: saed90nm_typ
+Wire Load Model Mode: enclosed
+
+  Startpoint: opcode[2] (input port)
+  Endpoint: alu_zero (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  alu                8000                  saed90nm_typ
+  alu_DW01_addsub_0  8000                  saed90nm_typ
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  input external delay                     0.00       0.00 r
+  opcode[2] (in)                           0.00       0.00 r
+  U231/QN (INVX0)                          0.13       0.13 f
+  U229/QN (NOR4X0)                         0.86       0.98 r
+  U225/QN (NOR2X0)                         0.64       1.63 f
+  U224/Q (MUX21X1)                         0.13       1.76 f
+  U222/QN (NAND2X0)                        0.10       1.86 r
+  r21/A[0] (alu_DW01_addsub_0)             0.00       1.86 r
+  r21/U1_0/CO (FADDX1)                     0.17       2.03 r
+  r21/U1_1/CO (FADDX1)                     0.14       2.17 r
+  r21/U1_2/CO (FADDX1)                     0.13       2.30 r
+  r21/U1_3/CO (FADDX1)                     0.13       2.43 r
+  r21/U1_4/CO (FADDX1)                     0.13       2.56 r
+  r21/U1_5/CO (FADDX1)                     0.13       2.70 r
+  r21/U1_6/CO (FADDX1)                     0.13       2.83 r
+  r21/U1_7/S (FADDX1)                      0.23       3.06 r
+  r21/SUM[7] (alu_DW01_addsub_0)           0.00       3.06 r
+  U239/Q (XOR2X1)                          0.13       3.19 f
+  U184/Q (AO221X1)                         0.17       3.37 f
+  U186/Q (OR2X1)                           0.08       3.45 f
+  U189/Q (OR4X1)                           0.13       3.58 f
+  U187/QN (NOR2X0)                         0.04       3.62 r
+  alu_zero (out)                           0.00       3.62 r
+  data arrival time                                   3.62
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+ report_area
+
+****************************************
+Report : area
+Design : alu
+Version: L-2016.03-SP2
+Date   : Mon May 15 11:13:33 2017
+****************************************
+
+Library(s) Used:
+
+   saed90nm_typ (File: /nfs/guille/a1/cadlibs/synop_lib/SAED_EDK90nm/Digital_St                                                                             andard_Cell_Library/synopsys/models/saed90nm_typ_pg.db)
+
+Number of ports:                           61
+Number of nets:                           230
+Number of cells:                          176
+Number of combinational cells:            174
+Number of sequential cells:                 1
+Number of macros/black boxes:               0
+Number of buf/inv:                         26
+Number of references:                      23
+
+Combinational area:               1675.531006
+Buf/Inv area:                      143.780005
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:              83.852944
+
+Total cell area:                  1675.531006
+Total area:                       1759.383950
+1
+write -format verilog -hierarchy -output alu.gate.v
+Writing verilog file '/nfs/stak/students/a/akellag/work3/alu.gate.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+quit!
